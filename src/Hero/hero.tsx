@@ -1,3 +1,3 @@
-import "./hero.scss";
+import "./Hero.scss";
 
 
