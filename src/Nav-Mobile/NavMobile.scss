@@ -1,26 +1,28 @@
 $priColor: #e83636;
 $secColor: #732323;
 
-.active{
+#navMobile {
+  .active {
     background-color: $priColor;
     padding: 15px;
     border-radius: 50px;
     transition: 0.3s ease-in-out;
 
-    span{
-        display: inline;
+    span {
+      display: inline;
     }
 
-    i{
-        font-size: 1rem;
+    i {
+      font-size: 1rem;
     }
-}
+  }
 
-a span{
+  a span {
     display: none;
-}
+  }
 
-i{
+  i {
     font-size: 1.3rem;
     transition: 0.3s ease-in-out;
+  }
 }
