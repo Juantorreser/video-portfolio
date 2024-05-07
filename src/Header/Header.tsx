@@ -3,15 +3,15 @@ import "./Header.scss";
 export default function Header() {
   return (
     <nav
-      className="p-5  hidden justify-between 
-                    md:flex md:fixed md:top-0 md:w-full"
+      className="p-5  justify-between 
+                    flex md:fixed md:top-0 md:w-full"
     >
       <a href="#hero" className="text-white text-2xl relative top-2">
         Torreser
       </a>
       <ul
         id="links"
-        className="p-0 flex justify-center align-middle text-white"
+        className="p-0 hidden md:flex justify-center align-middle text-white"
       >
         <a href="#hero">
           <span className="icon">
@@ -38,7 +38,7 @@ export default function Header() {
           <span className="text">Work</span>
         </a>
       </ul>
-      <a href="#contactMe" className="btn">
+      <a href="#contactMe" className="btn ">
         Contact Me
       </a>
     </nav>
