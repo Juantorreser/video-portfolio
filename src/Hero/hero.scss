@@ -25,4 +25,33 @@ $priColor: #e83636;
     filter: blur(100px);
     z-index: -1;
   }
+  img{
+    animation: imgAnimation 1s ease-in  forwards;
+    opacity: 0;
+  }
+
+  p{
+    animation: textAnimation 1s ease-in forwards;
+    opacity: 0;
+  }
+
+  @keyframes imgAnimation {
+    from{
+      transform: translateX(200px);
+    }
+    to{
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes textAnimation {
+    from{
+      transform: translateX(-200px);
+    }
+    to{
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }

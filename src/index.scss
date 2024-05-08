@@ -8,7 +8,11 @@
 //Variables
 $bgColor: #3A2425;
 
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: $bgColor;
     font-family: poppins;
+    scroll-behavior: smooth;
 }
