@@ -2,20 +2,6 @@ $priColor: #e83636;
 $secColor: #732323;
 
 #navMobile {
-  a:hover{
-    background-color: $priColor;
-    padding: 15px;
-    border-radius: 50px;
-    transition: 0.3s ease-in-out;
-
-    & span {
-      display: inline;
-    }
-
-    & i {
-      font-size: 1rem;
-    }
-  }
   .active {
     background-color: $priColor;
     padding: 15px;

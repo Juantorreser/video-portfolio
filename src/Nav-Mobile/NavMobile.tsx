@@ -29,7 +29,7 @@ export default function NavMobile() {
       ];
 
       linksObjectList.forEach((link) => {
-        if (link.bottom > 80 && link.bottom < screen.height + scrollPadding) {
+        if (link.bottom > 81 && link.bottom < screen.height + scrollPadding) {
           link.element.classList.add("active");
         } else {
           link.element.classList.remove("active");
