@@ -25,23 +25,23 @@ export default function Header() {
       const scrollPadding: number = 80;
       const homeSection = document.getElementById("hero") as HTMLElement;
       const servicesSection = document.getElementById("services") as HTMLElement;
-      // const skillsSection = document.getElementById('skills') as HTMLElement;
-      // const workSection = document.getElementById('work') as HTMLElement;
-      // const contactSection = document.getElementById('contactMe') as HTMLElement;
+      const skillsSection = document.getElementById('skills') as HTMLElement;
+      const workSection = document.getElementById('work') as HTMLElement;
+
 
       const homeHeight: number = homeSection.getBoundingClientRect().bottom;
       const servicesHeight: number =
         servicesSection.getBoundingClientRect().bottom;
-      // const skillsHeight : number = skillsSection.getBoundingClientRect().height;
-      // const workHeight : number = workSection.getBoundingClientRect().height;
+      const skillsHeight : number = skillsSection.getBoundingClientRect().bottom;
+      const workHeight : number = workSection.getBoundingClientRect().bottom;
 
       const linksList = document.querySelectorAll("#header ul a");
 
       const linksObjectList = [
         { name: "home", element: linksList[0], bottom: homeHeight },
         { name: "services", element: linksList[1], bottom: servicesHeight },
-        // { name: "skills", element: linksList[2], height : skillsHeight},
-        // { name: "work", element: linksList[3], height : workHeight},
+        { name: "skills", element: linksList[2], bottom : skillsHeight},
+        { name: "work", element: linksList[3], bottom : workHeight},
       ];
 
       linksObjectList.forEach((link) => {
