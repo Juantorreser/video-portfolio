@@ -54,4 +54,26 @@ $priColor: #e83636;
       opacity: 1;
     }
   }
+
+  //Divider
+  .custom-shape-divider-bottom-1715191051 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1715191051 svg {
+    position: relative;
+    display: block;
+    width: calc(201% + 1.3px);
+    height: 144px;
+}
+
+.custom-shape-divider-bottom-1715191051 .shape-fill {
+    fill: #FFFFFF;
+}
 }
