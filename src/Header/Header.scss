@@ -2,16 +2,17 @@ $priColor: #e83636;
 $secColor: #732323;
 
 nav {
-  z-index: 2;
+  z-index: 100;
+
   .btn {
     background-color: $priColor;
     padding: 0.7rem 1rem;
     color: white;
     border-radius: 4px;
   }
-  
-  ul{
-    a{
+
+  ul {
+    a {
       display: flex;
       align-items: center;
       margin: 0 15px;
@@ -20,48 +21,60 @@ nav {
       cursor: pointer;
 
       i {
-          color: white;
-          padding-right: 8px;
-          transition: 0.2s ease-in-out;
-        }
+        color: white;
+        padding-right: 8px;
+        transition: 0.2s ease-in-out;
+      }
 
-      &:hover::after{
+      &:hover::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2.5px;
+        background-color: $priColor;
+        bottom: -1px;
+        animation: underline 0.2s ease-in-out;
+      }
+
+      &:hover {
+        color: $priColor;
+        transform: scale(1.1);
+      }
+
+      &:hover > .icon > i {
+        color: $priColor;
+      }
+
+      &.active{
+        color: $priColor;
+        transform: scale(1.1);
+
+        &::after{
           content: "";
-          position: absolute;
-          width: 100%;
-          height: 2.5px;
-          background-color: $priColor;
-          bottom: -1px;
-          animation: underline 0.2s ease-in-out;
-      }
-
-      &:hover{
+        position: absolute;
+        width: 100%;
+        height: 2.5px;
+        background-color: $priColor;
+        bottom: -1px;
+        animation: underline 0.2s ease-in-out;
+        }
+        & > .icon >i{
           color: $priColor;
-          transform: scale(1.1);
+        }
       }
-
-      &:hover > .icon > i{
-          color: $priColor;
-      }
-
     }
   }
 
   //li Underline animation
-  @keyframes underline{
-    from{
-        transform: scaleX(0);
-        opacity: 0;
+  @keyframes underline {
+    from {
+      transform: scaleX(0);
+      opacity: 0;
     }
 
-    to{
-        transform: scaleX(1);
-        opacity: 1;
+    to {
+      transform: scaleX(1);
+      opacity: 1;
     }
   }
-
-
-  
-  
 }
-

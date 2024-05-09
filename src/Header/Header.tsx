@@ -1,8 +1,67 @@
+import { useEffect } from "react";
 import "./Header.scss";
 
 export default function Header() {
+  //Scroll Listener
+  useEffect(() => {
+    const changeHeaderBg = () => {
+      const header = document.getElementById("header") as HTMLElement;
+      const staticHeaderStyle = () => {
+        header.style.transition = "background-color 0.2s ease";
+        header.style.backgroundColor = "transparent";
+        header.style.boxShadow = "none";
+      };
+
+      const onScrollHeaderStyle = () => {
+        header.style.transition = "background-color 0.2s ease";
+        header.style.backgroundColor = "#3A2425";
+        header.style.boxShadow = "0 10px 30px  rgba(0,0,0,0.5)";
+      };
+
+      window.scrollY > 1 ? onScrollHeaderStyle() : staticHeaderStyle();
+    };
+
+    const changeActiveLink = () => {
+      const scrollPadding: number = 80;
+      const homeSection = document.getElementById("hero") as HTMLElement;
+      const servicesSection = document.getElementById("services") as HTMLElement;
+      // const skillsSection = document.getElementById('skills') as HTMLElement;
+      // const workSection = document.getElementById('work') as HTMLElement;
+      // const contactSection = document.getElementById('contactMe') as HTMLElement;
+
+      const homeHeight: number = homeSection.getBoundingClientRect().bottom;
+      const servicesHeight: number =
+        servicesSection.getBoundingClientRect().bottom;
+      // const skillsHeight : number = skillsSection.getBoundingClientRect().height;
+      // const workHeight : number = workSection.getBoundingClientRect().height;
+
+      const linksList = document.querySelectorAll("#header ul a");
+
+      const linksObjectList = [
+        { name: "home", element: linksList[0], bottom: homeHeight },
+        { name: "services", element: linksList[1], bottom: servicesHeight },
+        // { name: "skills", element: linksList[2], height : skillsHeight},
+        // { name: "work", element: linksList[3], height : workHeight},
+      ];
+
+      linksObjectList.forEach((link) => {
+        if (link.bottom > 80 && link.bottom < screen.height + scrollPadding) {
+          link.element.classList.add("active");
+        } else {
+          link.element.classList.remove("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", () => {
+      changeHeaderBg();
+      changeActiveLink();
+    });
+  }, []);
+
   return (
     <nav
+      id="header"
       className="p-5  justify-between 
                     flex fixed top-0 w-full"
     >
