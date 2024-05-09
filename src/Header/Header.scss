@@ -2,6 +2,7 @@ $priColor: #e83636;
 $secColor: #732323;
 
 nav {
+  z-index: 2;
   .btn {
     background-color: $priColor;
     padding: 0.7rem 1rem;

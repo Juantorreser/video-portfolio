@@ -20,7 +20,7 @@ export default function NavMobile() {
   return (
     <div
       id="navMobile"
-      className="p-5 fixed bottom-0 w-full flex justify-center items-center text-white
+      className="p-5 fixed bottom-0 w-full flex justify-center items-center text-white z-50 shadow-3xl
                 md:hidden"
     >
       <div className=" w-96 bg-sec rounded-full p-3 flex justify-evenly">

@@ -1,6 +1,5 @@
 $priColor: #e83636;
 #hero {
-    overflow-y: visible;
   &::before {
     width: 250px;
     height: 250px;
@@ -25,31 +24,31 @@ $priColor: #e83636;
     filter: blur(100px);
     z-index: -1;
   }
-  img{
-    animation: imgAnimation 1s ease-in  forwards;
+  img {
+    animation: imgAnimation 2s ease-in forwards;
     opacity: 0;
   }
 
-  p{
-    animation: textAnimation 1s ease-in forwards;
+  p {
+    animation: textAnimation 2s ease-in forwards;
     opacity: 0;
   }
 
   @keyframes imgAnimation {
-    from{
-      transform: translateX(200px);
+    from {
+      transform: translateX(100px);
     }
-    to{
+    to {
       transform: translateX(0);
       opacity: 1;
     }
   }
 
   @keyframes textAnimation {
-    from{
+    from {
       transform: translateX(-200px);
     }
-    to{
+    to {
       transform: translateX(0);
       opacity: 1;
     }
@@ -64,16 +63,16 @@ $priColor: #e83636;
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
-}
+  }
 
-.custom-shape-divider-bottom-1715191051 svg {
+  .custom-shape-divider-bottom-1715191051 svg {
     position: relative;
     display: block;
     width: calc(201% + 1.3px);
     height: 144px;
-}
+  }
 
-.custom-shape-divider-bottom-1715191051 .shape-fill {
-    fill: #FFFFFF;
-}
+  .custom-shape-divider-bottom-1715191051 .shape-fill {
+    fill: #ffffff;
+  }
 }

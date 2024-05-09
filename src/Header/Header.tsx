@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <nav
       className="p-5  justify-between 
-                    flex md:fixed md:top-0 md:w-full"
+                    flex fixed top-0 w-full"
     >
       <a href="#hero" className="text-white text-2xl relative top-2">
         Torreser

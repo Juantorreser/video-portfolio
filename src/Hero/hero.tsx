@@ -5,14 +5,14 @@ export default function Hero() {
   return (
     <section id="hero" className="h-screen">
       <div
-        className="p-6 flex flex-col items-center h-full justify-center
+        className="p-6 flex flex-col items-center h-full justify-center text-center
                       md:flex md:flex-row md:align-middle md:justify-around"
       >
-        <div className="m-14 full flex flex-col justify-center items-center text-5xl font-semibold text-white">
+        <div className="md:m-14 flex flex-col justify-center items-center text-4xl md:text-5xl font-semibold text-white">
           <p className="m-4">Hey, I'm Torreser</p>
           <p className="m-3">Video Editing</p>
         </div>
-        <div className="mt-14 md:w-1/3 flex  justify-center items-center">
+        <div className="mt-10 md:w-1/3 flex  justify-center items-center">
           <img
             src={heroImage}
             alt="Video Editing Services"
@@ -21,7 +21,7 @@ export default function Hero() {
         </div>
       </div>
       {/* Divider */}
-      <div className="custom-shape-divider-bottom-1715191051">
+      <div className="custom-shape-divider-bottom-1715191051 z-0">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
