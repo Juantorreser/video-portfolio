@@ -5,38 +5,46 @@ export default function NavMobile() {
   //Handle active link on scroll
   useEffect(() => {
     const changeActiveLink = () => {
-      const scrollPadding: number = 81;
+      const scrollPadding: number = 80;
       const homeSection = document.getElementById("hero") as HTMLElement;
-      const servicesSection = document.getElementById(
-        "services"
-      ) as HTMLElement;
-      const skillsSection = document.getElementById("skills") as HTMLElement;
-      const workSection = document.getElementById("work") as HTMLElement;
+      const servicesSection = document.getElementById("services") as HTMLElement;
+      const skillsSection = document.getElementById('skills') as HTMLElement;
+      const workSection = document.getElementById('work') as HTMLElement;
 
-      const homeHeight: number = homeSection.getBoundingClientRect().bottom;
-      const servicesHeight: number =
-        servicesSection.getBoundingClientRect().bottom;
-      const skillsHeight: number = skillsSection.getBoundingClientRect().bottom;
-      const workHeight: number = workSection.getBoundingClientRect().bottom;
+      //Sections Height
+      const homeHeight: number = Math.floor(homeSection.getBoundingClientRect().height);
+      const servicesHeight: number = Math.floor(servicesSection.getBoundingClientRect().height);
+      const skillsHeight : number = Math.floor(skillsSection.getBoundingClientRect().height);
+      const workHeight : number = Math.floor(workSection.getBoundingClientRect().height);
+
+      //Sections Top
+      const homeTop: number = Math.floor(homeSection.getBoundingClientRect().top);
+      const servicesTop: number = Math.floor(servicesSection.getBoundingClientRect().top);
+      const skillsTop : number = Math.floor(skillsSection.getBoundingClientRect().top);
+      const workTop : number = Math.floor(workSection.getBoundingClientRect().top);
 
       const linksList = document.querySelectorAll("#navMobile a");
 
       const linksObjectList = [
-        { name: "home", element: linksList[0], bottom: homeHeight },
-        { name: "services", element: linksList[1], bottom: servicesHeight },
-        { name: "skills", element: linksList[2], bottom: skillsHeight },
-        { name: "work", element: linksList[3], bottom: workHeight },
+        { name: "home", element: linksList[0], height: homeHeight, top: homeTop },
+        { name: "services", element: linksList[1], height: servicesHeight, top: servicesTop },
+        { name: "skills", element: linksList[2], height : skillsHeight, top: skillsTop },
+        { name: "work", element: linksList[3], height : workHeight, top: workTop},
       ];
-
+      
       linksObjectList.forEach((link) => {
-        if (link.bottom > 81 && link.bottom < screen.height + scrollPadding) {
-          link.element.classList.add("active");
+        if (link.top <= scrollPadding && Math.abs(link.top) < link.height - scrollPadding) {
+          if (link.element.classList.contains("active")){
+            return;
+          } else{
+            link.element.classList.add("active");
+          }
+
         } else {
           link.element.classList.remove("active");
         }
       });
     };
-
     window.addEventListener("scroll", changeActiveLink);
   }, []);
 
