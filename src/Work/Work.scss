@@ -1,0 +1,36 @@
+#work {
+    overflow-y:visible;
+  &::before {
+    content: "";
+    background-color: red;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50px;
+    transform: translateY(-300px);
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    background-color: #FFFFFF;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: 50px;
+    transform: translateY(350px);
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+  }
+  #portfolio {
+    width: 85%;
+    height: 70%;
+    backdrop-filter: blur(160px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.3);
+    background-color: rgba($color: #3a2425, $alpha: 0.5);
+  }
+}
