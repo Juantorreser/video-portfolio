@@ -1,8 +1,45 @@
 import "./Skills.scss";
+import AE from "../assets/logos/afterEffects.svg";
+import PR from "../assets/logos/premiere.svg";
+import AI from "../assets/logos/illustrator.svg";
+import PH from "../assets/logos/photoshop.svg";
+import { useEffect } from "react";
 
 export default function Skills() {
+  const skillsList = [
+    { name: "Premiere", image: PR, level: "Expert" },
+    { name: "After Effects", image: AE, level: "Advanced" },
+    { name: "Illustrator", image: AI, level: "Advanced" },
+    { name: "Photoshop", image: PH, level: "Intermediate" },
+  ];
+
+  useEffect(() => {
+    //Scroller Animation
+    const scroller = document.querySelector(".scroller") as HTMLElement;
+    const scrollerAnimation = () => {
+      scroller.setAttribute("data-animated", "true");
+
+      const scrollerUl = scroller.querySelector("ul") as HTMLElement;
+      const scrollerContent = Array.from(scrollerUl.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true) as HTMLElement;
+        duplicatedItem.setAttribute("aria-hidden", "true");
+        scrollerUl.appendChild(duplicatedItem);
+      });
+    };
+    //If user does NOT select reduce motion then Animate
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      scrollerAnimation();
+    }
+  }, []);
+
   return (
-    <div id="skills" className="h-screen text-center">
+    <div
+      id="skills"
+      className="text-center flex justify-center flex-col items-center"
+    >
+      {/*Section Divider */}
       <div className="custom-shape-divider-top-1715293794">
         <svg
           data-name="Layer 1"
@@ -25,6 +62,22 @@ export default function Skills() {
             className="shape-fill"
           ></path>
         </svg>
+      </div>
+      {/* Skills Section */}
+      <h1 className="mt-6 mb-6 text-white text-4xl font-semibold">Skills</h1>
+      <div className="scroller">
+        <ul>
+          {skillsList.map((skill, i) => {
+            return (
+              <li key={`${i}${skill.name}`}>
+                <div className="skillCard">
+                  <img src={skill.image} alt={skill.name} />
+                  <p>{skill.level}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
