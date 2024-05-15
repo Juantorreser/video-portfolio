@@ -1,5 +1,6 @@
 #work {
-    overflow-y:visible;
+  //Section Bg Design
+  overflow-y: visible;
   &::before {
     content: "";
     background-color: red;
@@ -14,7 +15,7 @@
   }
   &::after {
     content: "";
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     width: 150px;
     height: 150px;
     position: absolute;
@@ -24,6 +25,8 @@
     filter: blur(120px);
     z-index: -1;
   }
+
+  //Portfolio Container Effect
   #portfolio {
     width: 85%;
     height: 70%;
@@ -32,5 +35,93 @@
     border-radius: 12px;
     box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.3);
     background-color: rgba($color: #3a2425, $alpha: 0.5);
+  }
+
+  //Slider
+  .slider {
+    display: flex;
+    width: 100%;
+    height: 380px;
+    justify-content: center;
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 85%;
+      mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+      );
+      video {
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 300px;
+        border-radius: 0.5rem;
+        transition: 0.4s ease-in-out;
+      }
+    }
+  }
+
+  //Controls
+  .controls {
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    .btn {
+      cursor: pointer;
+      color: rgba($color: #ffffff, $alpha: 0.85);
+      text-align: center;
+      padding: 15px;
+      background: transparent;
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.3);
+      width: 50px;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .slider {
+      height: fit-content;
+      ul {
+        width: 100%;
+        mask: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3rem;
+        align-items: center;
+        height: max-content;
+        padding: 2rem;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: fit-content;
+          padding: 0;
+          margin: 0;
+          video {
+            display: block;
+            max-width: 300px;
+            border-radius: 0.5rem;
+            transition: 0.4s ease-in-out;
+            top: 50%;
+            box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.6);
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+    .controls {
+      display: none;
+    }
   }
 }
