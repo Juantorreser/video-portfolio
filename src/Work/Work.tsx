@@ -72,8 +72,8 @@ export default function Work() {
   }, [activeVideo, window.innerWidth]);
 
   return (
-    <div id="work" className="flex items-center flex-col">
-      <h1 className="text-white text-center text-4xl font-semibold mt-10 mb-10">
+    <section id="work" className="flex items-center flex-col">
+      <h1 className="sectionTitle">
         My Work
       </h1>
       <div id="portfolio" className="bg-ter">
@@ -125,6 +125,6 @@ export default function Work() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

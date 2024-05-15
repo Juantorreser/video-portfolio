@@ -35,7 +35,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <div
+    <section
       id="skills"
       className="text-center flex justify-center flex-col items-center"
     >
@@ -64,7 +64,7 @@ export default function Skills() {
         </svg>
       </div>
       {/* Skills Section */}
-      <h1 className="mt-6 mb-6 text-white text-4xl font-semibold">Skills</h1>
+      <h1 className="sectionTitle">Skills</h1>
       <div className="scroller">
         <ul>
           {skillsList.map((skill, i) => {
@@ -79,6 +79,6 @@ export default function Skills() {
           })}
         </ul>
       </div>
-    </div>
+    </section>
   );
 }
