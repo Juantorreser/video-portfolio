@@ -1,11 +1,11 @@
 import "./App.scss";
-import Header from "./Header/Header";
+import Header from "./Header/Header.tsx";
 import Hero from "./Hero/hero.tsx";
 import NavMobile from "./Nav-Mobile/NavMobile.tsx";
 import Services from "./Services/Services.tsx";
 import Skills from "./Skills/Skills.tsx";
 import Work from "./Work/Work.tsx";
-import Contact from "./Contact/Contact.tsx";
+import Contact from "./Contact/Contact.jsx";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Services />
       <Skills />
       <Work />
-      <Contact/>
+      <Contact />
     </>
   );
 }
