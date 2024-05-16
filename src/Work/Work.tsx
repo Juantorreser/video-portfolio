@@ -4,11 +4,21 @@ import Wines from "../assets/portfolio/Wines.mp4";
 // import Deadpool from "../assets/portfolio/Deadpool.mp4";
 import jsPark from "../assets/portfolio/JsPark.mp4";
 import LaAxe from "../assets/portfolio/LaAxe.mp4";
-// import Nike from "../assets/portfolio/NikeAsPizza.mp4";
 import { useEffect, useState } from "react";
 
 export default function Work() {
-  const videos = [Bartender, Wines, LaAxe, jsPark];
+  const nikeVideoUrl = "https://www.youtube.com/embed/EyQaYMqNcUs";
+  const deadpoolVideoUrl = "https://www.youtube.com/embed/-_HY6ODw88w";
+  const figmaVideoUrl = "https://www.youtube.com/embed/lq_kNqrodJs";
+  const videos = [
+    Bartender,
+    Wines,
+    LaAxe,
+    jsPark,
+    deadpoolVideoUrl,
+    nikeVideoUrl,
+    figmaVideoUrl
+  ];
 
   const [activeVideo, setActiveVideo] = useState(0);
 
@@ -31,7 +41,7 @@ export default function Work() {
   useEffect(() => {
     if (window.innerWidth <= 767) {
       const videoElements =
-        document.querySelectorAll<HTMLVideoElement>(".slider ul video");
+        document.querySelectorAll<HTMLVideoElement | HTMLIFrameElement>(".slider ul video, .slider ul iframe");
 
       let rightPosition = 40;
       let leftPosition = -100;
@@ -73,13 +83,18 @@ export default function Work() {
 
   return (
     <section id="work" className="flex items-center flex-col">
-      <h1 className="sectionTitle">
-        My Work
-      </h1>
+      <h1 className="sectionTitle">My Work</h1>
       <div id="portfolio" className="bg-ter">
         <div id="portfolioDisplay" className="slider">
           <ul>
             {videos.map((video, i) => {
+              if (i > 3) {
+                return (
+                  <li key={video + i}>
+                    <iframe src={video}></iframe>
+                  </li>
+                );
+              }
               return (
                 <li key={video + i}>
                   <video id={`video${i}`} controls src={video}></video>

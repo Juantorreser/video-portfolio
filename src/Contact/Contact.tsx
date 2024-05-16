@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "./Contact.scss";
 
 interface FormData {
@@ -26,9 +26,9 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault;
-  };
+  // const handleSubmit = (e: FormEvent) => {
+  //   e.preventDefault;
+  // };
 
   return (
     <div id="contactMe" className="h-screen pt-2">
