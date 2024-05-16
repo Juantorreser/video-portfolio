@@ -1,39 +1,46 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import "./Contact.scss";
 
-export default function Contact() {
-  const [formData, setFormData] =
-    useState <
-    FormData >
-    {
-      name: "",
-      email: "",
-      budget: "",
-      message: "",
-    };
+interface FormData {
+  name: string;
+  email: string;
+  budget: string;
+  message: string;
+}
 
-  const handleChange = (e) => {
+const Contact: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    budget: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault;
   };
 
   return (
     <div id="contactMe" className="h-screen pt-2">
       <h1 className="sectionTitle">Contact Me</h1>
-      <form action="">
+      <form action="https://formsubmit.co/jdtorreser@gmail.com" method="POST">
         <div className="col">
           <input
             type="email"
             id="formEmail"
             placeholder="Email"
             name="email"
-            value={formData.name}
+            value={formData.email}
             onChange={handleChange}
             required
           />
@@ -65,10 +72,12 @@ export default function Contact() {
             required
           ></textarea>
         </div>
+        <div className="row">
+          <button type="submit">Send Message</button>
+        </div>
       </form>
-      <div className="row">
-        <button type="submit">Send Message</button>
-      </div>
     </div>
   );
-}
+};
+
+export default Contact;
