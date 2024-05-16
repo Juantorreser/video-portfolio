@@ -1,14 +1,14 @@
 import "./Work.scss";
 import Bartender from "../assets/portfolio/Bartender.mp4";
 import Wines from "../assets/portfolio/Wines.mp4";
-import Deadpool from "../assets/portfolio/Deadpool.mp4";
+// import Deadpool from "../assets/portfolio/Deadpool.mp4";
 import jsPark from "../assets/portfolio/JsPark.mp4";
 import LaAxe from "../assets/portfolio/LaAxe.mp4";
-import Nike from "../assets/portfolio/NikeAsPizza.mp4";
+// import Nike from "../assets/portfolio/NikeAsPizza.mp4";
 import { useEffect, useState } from "react";
 
 export default function Work() {
-  const videos = [Bartender, Wines, LaAxe, Nike, Deadpool, jsPark];
+  const videos = [Bartender, Wines, LaAxe, jsPark];
 
   const [activeVideo, setActiveVideo] = useState(0);
 
