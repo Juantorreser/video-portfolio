@@ -11,6 +11,7 @@ export default function Hero() {
         <div className="md:m-14 flex flex-col justify-center items-center text-4xl md:text-5xl font-semibold text-white">
           <p className="m-4">Hey, I'm Torreser</p>
           <p className="m-3">Video Editing</p>
+          <a href="#services" className="btn text-base mt-5">Check My Work</a>
         </div>
         <div className="mt-10 md:w-1/3 flex  justify-center items-center">
           <img

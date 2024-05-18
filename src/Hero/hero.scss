@@ -1,5 +1,11 @@
 $priColor: #e83636;
 #hero {
+  .btn {
+    background-color: $priColor;
+    padding: 0.7rem 1rem;
+    color: white;
+    border-radius: 4px;
+  }
   &::before {
     width: 250px;
     height: 250px;
@@ -29,7 +35,7 @@ $priColor: #e83636;
     opacity: 0;
   }
 
-  p {
+  p, a {
     animation: textAnimation 2s ease-in forwards;
     opacity: 0;
   }
