@@ -1,7 +1,52 @@
 import "./hero.scss";
 import heroImage from "../assets/hero/heroImage3.png";
+import { useEffect } from "react";
 
 export default function Hero() {
+  // Typewriter Effect On Shown Services on Hero
+  const typewriterEffect = (textsToShow: string[], currentPosition: number) => {
+    if (currentPosition >= textsToShow.length) {
+      typewriterEffect(textsToShow, 0);
+    }
+    const textToEdit = document.getElementById(
+      "heroSkills"
+    ) as HTMLParagraphElement;
+    let currentText = textsToShow[currentPosition];
+    let count = 1;
+
+    const intervalId = setInterval(() => {
+      textToEdit.textContent = currentText.substring(0, count);
+      count++;
+      if (count === currentText.length) {
+        setTimeout(()=>{
+          clearInterval(intervalId); // Stop the interval once the count exceeds the length
+        }, 500)
+       
+        const innerInterval = setInterval(() => {
+          textToEdit.textContent = currentText.substring(0, count);
+          count--;
+          if (count === 0) {
+            clearInterval(innerInterval); // Stop the interval once the count exceeds the length
+
+            setTimeout(() => {
+              typewriterEffect(textsToShow, currentPosition + 1);
+            }, 200);
+          }
+        }, 150); // Update every 1000 milliseconds (1 second)
+      }
+    }, 150); // Update every 1000 milliseconds (1 second)
+  };
+
+  const textsToShow: string[] = [
+    "Video Editing",
+    "Motion Graphics",
+    "Audio Design",
+  ];
+
+  useEffect(() => {
+    typewriterEffect(textsToShow, 0);
+  }, []);
+
   return (
     <section id="hero" className="h-screen">
       <div
@@ -10,8 +55,12 @@ export default function Hero() {
       >
         <div className="md:m-14 flex flex-col justify-center items-center text-4xl md:text-5xl font-semibold text-white">
           <p className="m-4">Hey, I'm Torreser</p>
-          <p className="m-3">Video Editing</p>
-          <a href="#services" className="btn text-base mt-5">Check My Work</a>
+          <p id="heroSkills" className="m-3">
+            Video Editing
+          </p>
+          <a href="#services" className="btn text-base mt-5">
+            Check My Work
+          </a>
         </div>
         <div className="mt-10 md:w-1/3 flex  justify-center items-center">
           <img

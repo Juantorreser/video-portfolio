@@ -31,8 +31,9 @@ $priColor: #e83636;
     z-index: -1;
   }
   img {
-    animation: imgAnimation 2s ease-in forwards;
-    opacity: 0;
+    // animation: imgAnimation 2s ease-in forwards;
+    animation: imgAnimation2 linear 10s infinite;
+    opacity: 1;
   }
 
   p, a {
@@ -47,6 +48,24 @@ $priColor: #e83636;
     to {
       transform: translateX(0);
       opacity: 1;
+    }
+  }
+
+  @keyframes imgAnimation2 {
+    0%{
+      transform: scale(1);
+    }
+    25%{
+      transform: scale(1.05);
+    }
+    50%{
+      transform: scale(1);
+    }
+    75%{
+      transform: scale(1.05);
+    }
+    100%{
+      transform: scale(1);
     }
   }
 
