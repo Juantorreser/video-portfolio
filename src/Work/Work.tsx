@@ -1,9 +1,9 @@
 import "./Work.scss";
 import Bartender from "../assets/portfolio/Bartender.mp4";
 import Wines from "../assets/portfolio/Wines.mp4";
-// import Deadpool from "../assets/portfolio/Deadpool.mp4";
 import jsPark from "../assets/portfolio/JsPark.mp4";
 import LaAxe from "../assets/portfolio/LaAxe.mp4";
+import poster from "../assets/portfolio/PlayIcon.jpg"
 import { useEffect, useState } from "react";
 
 export default function Work() {
@@ -22,21 +22,6 @@ export default function Work() {
 
   const [activeVideo, setActiveVideo] = useState(0);
 
-  const playVideo = (activeVideo: number) => {
-    const playBtn = document.querySelector(".playBtn") as HTMLElement;
-
-    const videoToPlay = document.getElementById(
-      `video${activeVideo}`
-    ) as HTMLMediaElement;
-
-    if (videoToPlay.paused) {
-      videoToPlay.play();
-      playBtn.innerHTML = "||";
-    } else {
-      videoToPlay.pause();
-      playBtn.innerHTML = "&#x25B6;";
-    }
-  };
 
   useEffect(() => {
     if (window.innerWidth <= 767) {
@@ -97,7 +82,7 @@ export default function Work() {
               }
               return (
                 <li key={video + i}>
-                  <video id={`video${i}`} controls src={video}></video>
+                  <video poster={poster} id={`video${i}`} controls src={video}></video>
                 </li>
               );
             })}
@@ -116,14 +101,6 @@ export default function Work() {
             className="btn prevBtn"
           >
             {"<"}
-          </div>
-          <div
-            onClick={() => {
-              playVideo(activeVideo);
-            }}
-            className="btn playBtn"
-          >
-            &#x25B6;
           </div>
           <div
             onClick={() => {
