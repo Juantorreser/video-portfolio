@@ -3,7 +3,7 @@ import Bartender from "../assets/portfolio/Bartender.mp4";
 import Wines from "../assets/portfolio/Wines.mp4";
 import jsPark from "../assets/portfolio/JsPark.mp4";
 import LaAxe from "../assets/portfolio/LaAxe.mp4";
-import poster from "../assets/portfolio/PlayIcon.jpg"
+import poster from "../assets/portfolio/PlayIcon.png"
 import { useEffect, useState } from "react";
 
 export default function Work() {
