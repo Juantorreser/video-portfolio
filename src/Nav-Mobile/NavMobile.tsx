@@ -10,18 +10,21 @@ export default function NavMobile() {
       const servicesSection = document.getElementById("services") as HTMLElement;
       const skillsSection = document.getElementById('skills') as HTMLElement;
       const workSection = document.getElementById('work') as HTMLElement;
+      const contactSection = document.getElementById('contactMe') as HTMLElement;
 
       //Sections Height
       const homeHeight: number = Math.floor(homeSection.getBoundingClientRect().height);
       const servicesHeight: number = Math.floor(servicesSection.getBoundingClientRect().height);
       const skillsHeight : number = Math.floor(skillsSection.getBoundingClientRect().height);
       const workHeight : number = Math.floor(workSection.getBoundingClientRect().height);
+      const contactHeight : number = Math.floor(contactSection.getBoundingClientRect().height);
 
       //Sections Top
       const homeTop: number = Math.floor(homeSection.getBoundingClientRect().top);
       const servicesTop: number = Math.floor(servicesSection.getBoundingClientRect().top);
       const skillsTop : number = Math.floor(skillsSection.getBoundingClientRect().top);
       const workTop : number = Math.floor(workSection.getBoundingClientRect().top);
+      const contactTop : number = Math.floor(contactSection.getBoundingClientRect().top);
 
       const linksList = document.querySelectorAll("#navMobile a");
 
@@ -30,6 +33,7 @@ export default function NavMobile() {
         { name: "services", element: linksList[1], height: servicesHeight, top: servicesTop },
         { name: "skills", element: linksList[2], height : skillsHeight, top: skillsTop },
         { name: "work", element: linksList[3], height : workHeight, top: workTop},
+        { name: "contact", element: linksList[4], height : contactHeight, top: contactTop},
       ];
       
       linksObjectList.forEach((link) => {
@@ -70,6 +74,10 @@ export default function NavMobile() {
         <a href="#work" className="p-4">
           <i className="fa fa-play" aria-hidden="true"></i>
           <span className="ms-2">Work</span>
+        </a>
+        <a href="#contactMe" className="p-4">
+          <i className="	fa fa-envelope" aria-hidden="true"></i>
+          <span className="ms-2">Contact</span>
         </a>
       </div>
     </div>
