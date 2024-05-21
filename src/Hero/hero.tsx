@@ -48,7 +48,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="h-screen">
+    <section id="hero">
       <div
         className="p-6 flex flex-col items-center h-full justify-center text-center
                       md:flex md:flex-row md:align-middle md:justify-around"
