@@ -2,14 +2,21 @@
    h1 {
       cursor: default;
    }
+
    li {
       margin: 20px;
       font-weight: 500;
       cursor: default;
-      animation: showText linear forwards;
-      animation-timeline: view();
-      animation-range: entry 0% cover 30%;
+      // animation: showText linear forwards;
+      // animation-timeline: view();
+      // animation-range: entry 0% cover 30%;
+      transform: translatey(200px);
       opacity: 0;
+      transition: 0.4s ease;
+      &.show {
+         transform: translatey(0px);
+         opacity: 1;
+      }
    }
 
    video {
@@ -21,27 +28,29 @@
       &:hover {
          transform: scale(1.05);
       }
-      animation: showVideo linear forwards;
-      animation-timeline: view();
-      animation-range: entry 0% cover 30%;
+      // animation: showVideo linear forwards;
+      // animation-timeline: view();
+      // animation-range: entry 0% cover 30%;
 
-   }
-
-
-   @keyframes showVideo {
- 
-      to {
+      &.show {
          transform: translatey(0px);
          opacity: 1;
       }
    }
 
-   @keyframes showText {
-      from {
-         opacity: 0;
-      }
-      to {
-         opacity: 1;
-      }
-   }
+   // @keyframes showVideo {
+   //    to {
+   //       transform: translatey(0px);
+   //       opacity: 1;
+   //    }
+   // }
+
+   // @keyframes showText {
+   //    from {
+   //       opacity: 0;
+   //    }
+   //    to {
+   //       opacity: 1;
+   //    }
+   // }
 }
