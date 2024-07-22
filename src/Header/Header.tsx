@@ -14,7 +14,7 @@ export default function Header() {
 
       const onScrollHeaderStyle = () => {
         header.style.transition = "background-color 0.2s ease";
-        header.style.backgroundColor = "#3A2425";
+        header.style.backgroundColor = "#201422";
         header.style.boxShadow = "0 10px 30px  rgba(0,0,0,0.5)";
       };
 
