@@ -1,5 +1,4 @@
 import "./Work.scss";
-import poster from "../assets/portfolio/PlayIcon.png";
 import {useEffect, useState} from "react";
 
 export default function Work() {
